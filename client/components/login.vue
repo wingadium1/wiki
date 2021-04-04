@@ -185,7 +185,7 @@
     v-dialog(v-model='isTFAShown', max-width='500', persistent)
       v-card
         .login-tfa.text-center.pa-5.grey--text.text--darken-3
-          img(src='_assets/svg/icon-pin-pad.svg')
+          img(src='wiki/_assets/svg/icon-pin-pad.svg')
           .subtitle-2 {{$t('auth:tfaFormTitle')}}
           v-text-field.login-tfa-field.mt-2(
             solo
@@ -692,7 +692,7 @@ export default {
 
 <style lang="scss">
   .login {
-    // background-image: url('/_assets/img/splash/1.jpg');
+    // background-image: url('/wiki/_assets/img/splash/1.jpg');
     background-color: mc('grey', '900');
     background-size: cover;
     background-position: center center;

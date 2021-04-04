@@ -38,6 +38,7 @@
   "dependencies": {
     "@aoberoi/passport-slack": "1.0.5",
     "@azure/storage-blob": "12.2.1",
+    "@elastic/elasticsearch": "7.12.0",
     "@exlinc/keycloak-passport": "1.0.2",
     "@root/csr": "0.8.1",
     "@root/keypairs": "0.10.1",
@@ -71,8 +72,6 @@
     "diff2html": "3.1.14",
     "dompurify": "2.2.0",
     "dotize": "0.3.0",
-    "elasticsearch6": "npm:@elastic/elasticsearch@6",
-    "elasticsearch7": "npm:@elastic/elasticsearch@7",
     "emoji-regex": "9.2.0",
     "eventemitter2": "6.4.3",
     "express": "4.17.1",

@@ -35,7 +35,7 @@ module.exports = {
   },
   output: {
     path: path.join(process.cwd(), 'assets'),
-    publicPath: '/_assets/',
+    publicPath: '/wiki/_assets/',
     filename: `js/[name].js?${now}`,
     chunkFilename: `js/[name].js?${now}`,
     globalObject: 'this',

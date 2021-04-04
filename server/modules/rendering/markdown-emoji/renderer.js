@@ -12,7 +12,7 @@ module.exports = {
     md.renderer.rules.emoji = (token, idx) => {
       return twemoji.parse(token[idx].content, {
         callback (icon, opts) {
-          return `/_assets/svg/twemoji/${icon}.svg`
+          return `/wiki/_assets/svg/twemoji/${icon}.svg`
         }
       })
     }

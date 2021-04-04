@@ -314,9 +314,9 @@ import _ from 'lodash'
 import ClipboardJS from 'clipboard'
 import Vue from 'vue'
 
-Vue.component('tabset', Tabset)
+Vue.component('Tabset', Tabset)
 
-Prism.plugins.autoloader.languages_path = '/_assets/js/prism/'
+Prism.plugins.autoloader.languages_path = '/wiki/_assets/js/prism/'
 Prism.plugins.NormalizeWhitespace.setDefaults({
   'remove-trailing': true,
   'remove-indent': true,
