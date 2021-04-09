@@ -49,8 +49,8 @@ store.commit('user/REFRESH_AUTH')
 // Initialize Apollo Client (GraphQL)
 // ====================================
 
-const graphQLEndpoint = window.location.protocol + '//' + window.location.host + '/graphql'
-const graphQLWSEndpoint = ((window.location.protocol === 'https:') ? 'wss:' : 'ws:') + '//' + window.location.host + '/graphql-subscriptions'
+const graphQLEndpoint = window.location.protocol + '//' + window.location.host + '/wiki/graphql'
+const graphQLWSEndpoint = ((window.location.protocol === 'https:') ? 'wss:' : 'ws:') + '//' + window.location.host + '/wiki/graphql-subscriptions'
 
 const graphQLLink = ApolloLink.from([
   new ErrorLink(({ graphQLErrors, networkError }) => {
