@@ -20,6 +20,10 @@ let WIKI = {
 }
 global.WIKI = WIKI
 
+
+console.log("wingadiummmmmmmmmmmmmmmmmm")
+console.log(WIKI)
+console.log("wingadiummmmmmmmmmmmmmmmmm")
 WIKI.configSvc.init()
 
 // ----------------------------------------

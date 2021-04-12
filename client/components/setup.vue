@@ -196,7 +196,7 @@ export default {
 
       _.delay(async () => {
         try {
-          const resp = await fetch('/finalize', {
+          const resp = await fetch('/wiki/finalize', {
             method: 'POST',
             cache: 'no-cache',
             headers: {
@@ -214,7 +214,7 @@ export default {
               })
               this.success = true
               _.delay(() => {
-                window.location.assign('/login')
+                window.location.assign('/wiki/login')
               }, 3000)
             }, 10000)
           } else {

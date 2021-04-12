@@ -65,6 +65,7 @@ module.exports = () => {
   // ----------------------------------------
 
   app.get('*', async (req, res) => {
+    console.log("url :" + req.url)
     let packageObj = await fs.readJson(path.join(WIKI.ROOTPATH, 'package.json'))
     res.render('setup', { packageObj })
   })
@@ -72,7 +73,7 @@ module.exports = () => {
   /**
    * Finalize
    */
-  app.post('/finalize', async (req, res) => {
+  app.post('/wiki/finalize', async (req, res) => {
     try {
       // Set config
       _.set(WIKI.config, 'auth', {
