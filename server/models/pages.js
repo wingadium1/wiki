@@ -452,6 +452,8 @@ module.exports = class Page extends Model {
 
     // -> Perform move?
     if ((opts.locale && opts.locale !== page.localeCode) || (opts.path && opts.path !== page.path)) {
+      WIKI.logger.info('wait WIKI.models.pages.movePage on server models')
+
       await WIKI.models.pages.movePage({
         id: page.id,
         destinationLocale: opts.locale,

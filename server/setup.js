@@ -65,7 +65,7 @@ module.exports = () => {
   // ----------------------------------------
 
   app.get('*', async (req, res) => {
-    console.log("url :" + req.url)
+    WIKI.logger.info('url :' + req.url)
     let packageObj = await fs.readJson(path.join(WIKI.ROOTPATH, 'package.json'))
     res.render('setup', { packageObj })
   })

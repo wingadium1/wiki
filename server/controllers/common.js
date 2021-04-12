@@ -4,6 +4,7 @@ const pageHelper = require('../helpers/page')
 const _ = require('lodash')
 const CleanCSS = require('clean-css')
 const moment = require('moment')
+const { path } = require('d3-path')
 
 /* global WIKI */
 
@@ -388,7 +389,7 @@ router.get(['/s', '/s/*'], async (req, res, next) => {
 /**
  * Tags
  */
-router.get(['/t', '/t/*'], (req, res, next) => {
+router.get(['/wiki/t', '/wiki/t/*'], (req, res, next) => {
   _.set(res.locals, 'pageMeta.title', 'Tags')
   res.render('tags')
 })
@@ -396,7 +397,7 @@ router.get(['/t', '/t/*'], (req, res, next) => {
 /**
  * User Avatar
  */
-router.get('/_userav/:uid', async (req, res, next) => {
+router.get('/wiki/_userav/:uid', async (req, res, next) => {
   if (!WIKI.auth.checkAccess(req.user, ['read:pages'])) {
     return res.sendStatus(403)
   }
@@ -412,11 +413,12 @@ router.get('/_userav/:uid', async (req, res, next) => {
 /**
  * View document / asset
  */
-router.get('/*', async (req, res, next) => {
+router.get(['/wiki', '/wiki/*'], async (req, res, next) => {
   const stripExt = _.some(WIKI.data.pageExtensions, ext => _.endsWith(req.path, `.${ext}`))
-  const pageArgs = pageHelper.parsePath(req.path, { stripExt })
+  var path = req.path.slice(5)
+  console.log(path)
+  const pageArgs = pageHelper.parsePath(path, { stripExt })
   const isPage = (stripExt || pageArgs.path.indexOf('.') === -1)
-
   if (isPage) {
     if (WIKI.config.lang.namespacing && !pageArgs.explicitLocale) {
       return res.redirect(`/${pageArgs.locale}/${pageArgs.path}`)

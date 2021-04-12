@@ -27,7 +27,7 @@
           //-     v-app-bar-nav-icon.btn-animate-app(v-on='on', :class='$vuetify.rtl ? `mx-0` : ``')
           //-       v-icon mdi-menu
           //-   v-list(nav, :light='!$vuetify.theme.dark', :dark='$vuetify.theme.dark', :class='$vuetify.theme.dark ? `grey darken-4` : ``')
-          //-     v-list-item.pl-4(href='/')
+          //-     v-list-item.pl-4(href='/wiki/')
           //-       v-list-item-avatar(size='24'): v-icon(color='blue') mdi-home
           //-       v-list-item-title.body-2 {{$t('common:header.home')}}
           //-     v-list-item.pl-4(@click='')
@@ -180,7 +180,7 @@
                 v-btn(icon, tile, height='64', v-on='on', href='/a', :aria-label='$t(`common:header.admin`)')
                   v-icon(color='grey') mdi-cog
               span {{$t('common:header.admin')}}
-            v-btn(v-else, text, tile, height='64', href='/', :aria-label='$t(`common:actions.exit`)')
+            v-btn(v-else, text, tile, height='64', href='/wiki/', :aria-label='$t(`common:actions.exit`)')
               v-icon(left, color='grey') mdi-exit-to-app
               span {{$t('common:actions.exit')}}
             v-divider(vertical)

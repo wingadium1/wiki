@@ -403,6 +403,7 @@ module.exports = {
      */
     async move(obj, args, context) {
       try {
+        WIKI.logger.info('wait WIKI.models.pages.movePage on graphql')
         await WIKI.models.pages.movePage({
           ...args,
           user: context.req.user

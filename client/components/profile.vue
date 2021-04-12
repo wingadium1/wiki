@@ -38,7 +38,7 @@ import VueRouter from 'vue-router'
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/p',
+  base: '/wiki/p',
   routes: [
     { path: '/', redirect: '/profile' },
     { path: '/profile', component: () => import(/* webpackChunkName: "profile" */ './profile/profile.vue') },

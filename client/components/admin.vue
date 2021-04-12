@@ -153,7 +153,7 @@ WIKI.$store.registerModule('admin', adminStore)
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/a',
+  base: '/wiki/a',
   routes: [
     { path: '/', redirect: '/dashboard' },
     { path: '/dashboard', component: () => import(/* webpackChunkName: "admin" */ './admin/admin-dashboard.vue') },

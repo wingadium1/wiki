@@ -4,7 +4,7 @@
     v-navigation-drawer.pb-0.elevation-1(app, fixed, clipped, :right='$vuetify.rtl', permanent, width='300')
       vue-scroll(:ops='scrollStyle')
         v-list(dense, nav)
-          v-list-item(href='/')
+          v-list-item(href='/wiki/')
             v-list-item-icon: v-icon mdi-home
             v-list-item-title {{$t('common:header.home')}}
           template(v-for='(tags, groupName) in tagsGrouped')
@@ -161,7 +161,7 @@ import pagesQuery from 'gql/common/common-pages-query-list.gql'
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/t'
+  base: '/wiki/t'
 })
 
 export default {
