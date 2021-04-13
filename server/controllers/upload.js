@@ -10,7 +10,7 @@ const sanitize = require('sanitize-filename')
 /**
  * Upload files
  */
-router.post('/u', (req, res, next) => {
+router.post('/wiki/u', (req, res, next) => {
   multer({
     dest: path.resolve(WIKI.ROOTPATH, WIKI.config.dataPath, 'uploads'),
     limits: {
@@ -98,7 +98,7 @@ router.post('/u', (req, res, next) => {
   res.send('ok')
 })
 
-router.get('/u', async (req, res, next) => {
+router.get('/wiki/u', async (req, res, next) => {
   res.json({
     ok: true
   })

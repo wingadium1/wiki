@@ -31,11 +31,11 @@
                 span Actions
                 v-icon(right) mdi-chevron-down
             v-list(dense, nav)
-              v-list-item(:href='`/` + page.locale + `/` + page.path')
+              v-list-item(:href='`/wiki/` + page.locale + `/` + page.path')
                 v-list-item-icon
                   v-icon(color='indigo') mdi-text-subject
                 v-list-item-title View
-              v-list-item(:href='`/e/` + page.locale + `/` + page.path')
+              v-list-item(:href='`/wiki/e/` + page.locale + `/` + page.path')
                 v-list-item-icon
                   v-icon(color='indigo') mdi-pencil
                 v-list-item-title Edit
@@ -47,11 +47,11 @@
                 v-list-item-icon
                   v-icon(color='grey') mdi-earth-remove
                 v-list-item-title Unpublish
-              v-list-item(:href='`/s/` + page.locale + `/` + page.path')
+              v-list-item(:href='`/wiki/s/` + page.locale + `/` + page.path')
                 v-list-item-icon
                   v-icon(color='indigo') mdi-code-tags
                 v-list-item-title View Source
-              v-list-item(:href='`/h/` + page.locale + `/` + page.path')
+              v-list-item(:href='`/wiki/h/` + page.locale + `/` + page.path')
                 v-list-item-icon
                   v-icon(color='indigo') mdi-history
                 v-list-item-title View History

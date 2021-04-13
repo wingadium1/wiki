@@ -78,7 +78,7 @@
                   label
                   :color='$vuetify.theme.dark ? `teal darken-1` : `teal lighten-5`'
                   v-for='(tag, idx) in tags'
-                  :href='`/t/` + tag.tag'
+                  :href='`/wiki/t/` + tag.tag'
                   :key='`tag-` + tag.tag'
                   )
                   v-icon(:color='$vuetify.theme.dark ? `teal lighten-3` : `teal`', left, small) mdi-tag
@@ -86,7 +86,7 @@
                 v-chip.mr-1.mb-1(
                   label
                   :color='$vuetify.theme.dark ? `teal darken-1` : `teal lighten-5`'
-                  :href='`/t/` + tags.map(t => t.tag).join(`/`)'
+                  :href='`/wiki/t/` + tags.map(t => t.tag).join(`/`)'
                   :aria-label='$t(`common:page.tagsMatching`)'
                   )
                   v-icon(:color='$vuetify.theme.dark ? `teal lighten-3` : `teal`', size='20') mdi-tag-multiple
@@ -136,7 +136,7 @@
                     template(v-slot:activator='{ on }')
                       v-btn.btn-animate-edit(
                         icon
-                        :href='"/h/" + locale + "/" + path'
+                        :href='"/wiki/h/" + locale + "/" + path'
                         v-on='on'
                         x-small
                         v-if='hasReadHistoryPermission'

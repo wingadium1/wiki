@@ -22,7 +22,7 @@ const bruteforce = new ExpressBrute(new BruteKnex({
 /**
  * Login form
  */
-router.get('/login', async (req, res, next) => {
+router.get('/wiki/login', async (req, res, next) => {
   _.set(res.locals, 'pageMeta.title', 'Login')
 
   if (req.query.legacy || (req.get('user-agent') && req.get('user-agent').indexOf('Trident') >= 0)) {
@@ -50,7 +50,7 @@ router.get('/login', async (req, res, next) => {
 /**
  * Social Strategies Login
  */
-router.get('/login/:strategy', async (req, res, next) => {
+router.get('/wiki/login/:strategy', async (req, res, next) => {
   try {
     await WIKI.models.users.login({
       strategy: req.params.strategy
@@ -63,7 +63,7 @@ router.get('/login/:strategy', async (req, res, next) => {
 /**
  * Social Strategies Callback
  */
-router.all('/login/:strategy/callback', async (req, res, next) => {
+router.all('/wiki/login/:strategy/callback', async (req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'POST') { return next() }
 
   try {
@@ -82,7 +82,7 @@ router.all('/login/:strategy/callback', async (req, res, next) => {
     } else if (authResult.redirect) {
       res.redirect(authResult.redirect)
     } else {
-      res.redirect('/')
+      res.redirect('/wiki')
     }
   } catch (err) {
     next(err)
@@ -92,7 +92,7 @@ router.all('/login/:strategy/callback', async (req, res, next) => {
 /**
  * LEGACY - Login form handling
  */
-router.post('/login', bruteforce.prevent, async (req, res, next) => {
+router.post('/wiki/login', bruteforce.prevent, async (req, res, next) => {
   _.set(res.locals, 'pageMeta.title', 'Login')
 
   if (req.query.legacy || req.get('user-agent').indexOf('Trident') >= 0) {
@@ -121,7 +121,7 @@ router.post('/login', bruteforce.prevent, async (req, res, next) => {
 /**
  * Logout
  */
-router.get('/logout', async (req, res) => {
+router.get('/wiki/logout', async (req, res) => {
   const redirURL = await WIKI.models.users.logout({ req, res })
   req.logout()
   res.clearCookie('jwt')
@@ -131,7 +131,7 @@ router.get('/logout', async (req, res) => {
 /**
  * Register form
  */
-router.get('/register', async (req, res, next) => {
+router.get('/wiki/register', async (req, res, next) => {
   _.set(res.locals, 'pageMeta.title', 'Register')
   const localStrg = await WIKI.models.authentication.getStrategy('local')
   if (localStrg.selfRegistration) {
@@ -144,7 +144,7 @@ router.get('/register', async (req, res, next) => {
 /**
  * Verify
  */
-router.get('/verify/:token', bruteforce.prevent, async (req, res, next) => {
+router.get('/wiki/verify/:token', bruteforce.prevent, async (req, res, next) => {
   try {
     const usr = await WIKI.models.userKeys.validateToken({ kind: 'verify', token: req.params.token })
     await WIKI.models.users.query().patch({ isVerified: true }).where('id', usr.id)
@@ -164,7 +164,7 @@ router.get('/verify/:token', bruteforce.prevent, async (req, res, next) => {
 /**
  * Reset Password
  */
-router.get('/login-reset/:token', bruteforce.prevent, async (req, res, next) => {
+router.get('/wiki/login-reset/:token', bruteforce.prevent, async (req, res, next) => {
   try {
     const usr = await WIKI.models.userKeys.validateToken({ kind: 'resetPwd', token: req.params.token })
     if (!usr) {
@@ -186,10 +186,10 @@ router.get('/login-reset/:token', bruteforce.prevent, async (req, res, next) => 
 /**
  * JWT Public Endpoints
  */
-router.get('/.well-known/jwk.json', function (req, res, next) {
+router.get('/wiki/.well-known/jwk.json', function (req, res, next) {
   res.json(WIKI.config.certs.jwk)
 })
-router.get('/.well-known/jwk.pem', function (req, res, next) {
+router.get('/wiki/.well-known/jwk.pem', function (req, res, next) {
   res.send(WIKI.config.certs.public)
 })
 

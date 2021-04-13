@@ -8,7 +8,7 @@ const qs = require('querystring')
 /**
  * Let's Encrypt Challenge
  */
-router.get('/.well-known/acme-challenge/:token', (req, res, next) => {
+router.get('/wiki/.well-known/acme-challenge/:token', (req, res, next) => {
   res.type('text/plain')
   if (_.get(WIKI.config, 'letsencrypt.challenge', false)) {
     if (WIKI.config.letsencrypt.challenge.token === req.params.token) {

@@ -52,7 +52,7 @@
                       dark
                       outlined
                       small
-                      :href='`/t/` + current.tag'
+                      :href='`/wiki/t/` + current.tag'
                       )
                       span.text-none {{$t('admin:tags.viewLinkedPages')}}
                       v-icon(right) mdi-chevron-right

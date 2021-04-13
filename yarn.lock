@@ -8660,6 +8660,11 @@ es6-iterator@2.0.3, es6-iterator@~2.0.3:
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
 
+es6-object-assign@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
+  integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
+
 es6-promise@^4.0.3:
   version "4.2.8"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
@@ -18989,6 +18994,11 @@ vue2-animate@2.1.4:
   resolved "https://registry.yarnpkg.com/vue2-animate/-/vue2-animate-2.1.4.tgz#7a241b8a0f839d97b9df63d4551fbe666354175e"
   integrity sha512-tIFHLxLYXwti0E3rJ7OeIUxTl+uVC8t9SYlD4aQ+gfgcheSu9yDbXklBNRIFxBmfNWDVpKQLMvGLxRrrCn3alw==
 
+vue@2.6.11:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
+  integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
+
 vue@2.6.12:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
@@ -19005,6 +19015,14 @@ vuedraggable@2.24.3:
   integrity sha512-6/HDXi92GzB+Hcs9fC6PAAozK1RLt1ewPTLjK0anTYguXLAeySDmcnqE8IC0xa7shvSzRjQXq3/+dsZ7ETGF3g==
   dependencies:
     sortablejs "1.10.2"
+
+vuejs-logger@1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/vuejs-logger/-/vuejs-logger-1.5.5.tgz#25cc0905341eaf19c22480505ee94f4a9dd93275"
+  integrity sha512-wESz1F4KWk98YANEDg2yeS+fpwk2WrR41ZslLfZgTD+EYFm/7VMMUjRThhHT8CCOLOCQdsS4Ge2C9bIs68v8Ww==
+  dependencies:
+    es6-object-assign "1.1.0"
+    vue "2.6.11"
 
 vuescroll@4.16.1:
   version "4.16.1"

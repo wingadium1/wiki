@@ -5,7 +5,7 @@
         img.animated.fadeIn(src='/wiki/_assets/svg/logo-wikijs.svg', alt='Wiki.js')
         .headline.animated.fadeInUp {{ $t('welcome.title') }}
         .subtitle-1.mt-3.animated.fadeInUp.wait-p1s {{ $t('welcome.subtitle') }}
-        v-btn.mt-5.animated.fadeInUp.wait-p2s(color='primary', :href='`/e/` + locale + `/home`', x-large)
+        v-btn.mt-5.animated.fadeInUp.wait-p2s(color='primary', :href='`/wiki/e/` + locale + `/home`', x-large)
           v-icon(left) mdi-plus
           span {{ $t('welcome.createhome') }}
 </template>

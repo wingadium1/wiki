@@ -11,7 +11,7 @@
         i18next.body-2(tag='div', path='editor:conflict.infoGeneric')
           strong(place='authorName') {{latest.authorName}}
           span(place='date', :title='$options.filters.moment(latest.updatedAt, `LLL`)') {{ latest.updatedAt | moment('from') }}.
-        v-btn.mt-2(outlined, color='indigo', small, :href='`/` + latest.locale + `/` + latest.path', target='_blank')
+        v-btn.mt-2(outlined, color='indigo', small, :href='`/wiki/` + latest.locale + `/` + latest.path', target='_blank')
           v-icon(left) mdi-open-in-new
           span {{$t('editor:conflict.viewLatestVersion')}}
         .body-2.mt-5: strong {{$t('editor:conflict.whatToDo')}}

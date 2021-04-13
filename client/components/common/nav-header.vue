@@ -72,7 +72,7 @@
               )
             v-tooltip(bottom)
               template(v-slot:activator='{ on }')
-                v-btn.ml-2.mr-0(icon, v-on='on', href='/t', :aria-label='$t(`common:header.browseTags`)')
+                v-btn.ml-2.mr-0(icon, v-on='on', href='/wiki/t', :aria-label='$t(`common:header.browseTags`)')
                   v-icon(color='grey') mdi-tag-multiple
               span {{$t('common:header.browseTags')}}
       v-flex(xs7, md4)
@@ -177,7 +177,7 @@
           template(v-if='isAuthenticated && isAdmin')
             v-tooltip(bottom, v-if='mode !== `admin`')
               template(v-slot:activator='{ on }')
-                v-btn(icon, tile, height='64', v-on='on', href='/a', :aria-label='$t(`common:header.admin`)')
+                v-btn(icon, tile, height='64', v-on='on', href='/wiki/a', :aria-label='$t(`common:header.admin`)')
                   v-icon(color='grey') mdi-cog
               span {{$t('common:header.admin')}}
             v-btn(v-else, text, tile, height='64', href='/wiki/', :aria-label='$t(`common:actions.exit`)')
@@ -219,7 +219,7 @@
               //-   v-list-item-content
               //-     v-list-item-title {{$t('common:header.myWiki')}}
               //-     v-list-item-subtitle.overline Coming soon
-              v-list-item(href='/p')
+              v-list-item(href='/wiki/p')
                 v-list-item-action: v-icon(color='blue-grey') mdi-face-profile
                 v-list-item-content
                   v-list-item-title(:class='$vuetify.theme.dark ? `blue-grey--text text--lighten-3` : `blue-grey--text`') {{$t('common:header.profile')}}
@@ -229,7 +229,7 @@
 
           v-tooltip(v-else, left)
             template(v-slot:activator='{ on }')
-              v-btn(icon, v-on='on', color='grey darken-3', href='/login', :aria-label='$t(`common:header.login`)')
+              v-btn(icon, v-on='on', color='grey darken-3', href='/wiki/login', :aria-label='$t(`common:header.login`)')
                 v-icon(color='grey') mdi-account-circle
             span {{$t('common:header.login')}}
 
