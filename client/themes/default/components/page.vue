@@ -513,6 +513,7 @@ export default {
     this.$store.set('page/isPublished', this.isPublished)
     this.$store.set('page/id', this.pageId)
     this.$store.set('page/locale', this.locale)
+    console.log(this.path)
     this.$store.set('page/path', this.path)
     this.$store.set('page/tags', this.tags)
     this.$store.set('page/title', this.title)
